@@ -1,0 +1,21 @@
+<div class="dropdown men-dropdown">
+    <div class="d-flex gap-2 text-white align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
+      <mat-icon>account_circle</mat-icon>
+      <div
+        class="d-flex align-items-start align-items-start flex-column"
+      >
+        <span class="badge p-0" *ngIf="firstname">Hi, {{ firstname }}</span>
+        <span class="badge p-0" *ngIf="!firstname">Login/Register</span>
+        <div class="d-flex align-items-center">
+          <span class="small">Account </span>
+        <mat-icon>arrow_drop_down</mat-icon>
+        </div>
+      </div>
+    </div>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#" *ngFor="let item of dropdownItems">
+        <mat-icon>{{item.icon}}</mat-icon>
+        <span>{{item.text}}</span>
+      </a></li>
+    </ul>
+  </div>

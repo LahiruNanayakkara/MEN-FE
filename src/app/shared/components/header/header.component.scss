@@ -1,0 +1,28 @@
+.logo {
+  width: 7.53406rem;
+}
+
+app-searchbar {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 6rem;
+  }
+}

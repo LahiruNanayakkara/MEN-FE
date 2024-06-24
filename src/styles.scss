@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", "Helvetica Neue", sans-serif !important;
+}
+
+.material-icons{
+  font-family: 'Material Icons' !important;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", "Helvetica Neue", sans-serif !important;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+$font-white: #ffffff;
+$font-black: #000;
+$font-dark:#222;
+$font-secondary:rgba(34, 34, 34, 0.6);
+$dark-gradient: linear-gradient(90deg, #0f0f0f 0%, #171717 100%);
+
+.men-btn {
+  display: flex !important;
+  padding: 13px 28px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.dropdown {
+  cursor: pointer !important ;
+}
+
+.dropdown-menu {
+  top: 10% !important;
+  border: none !important;
+  padding: 8px !important;
+  border-radius: 2px !important;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px !important;
+    color: $font-dark;
+    transition: all 0.2s ease;
+
+    span {
+      font-size: 14px !important;
+    }
+
+    mat-icon {
+      width: auto;
+      height: auto;
+      font-size: 20px;
+    }
+  }
+}
+
