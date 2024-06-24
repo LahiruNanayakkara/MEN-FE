@@ -1,0 +1,11 @@
+<div class="d-flex gap-2 text-white align-items-center">
+  <mat-icon>{{ icon }}</mat-icon>
+  <div class="d-flex align-items-start flex-column">
+    <span
+      class="badge justify-content-center bg-danger rounded-5"
+      *ngIf="label != 0"
+      >{{ label }}</span
+    >
+    <span class="small">{{ text }}</span>
+  </div>
+</div>

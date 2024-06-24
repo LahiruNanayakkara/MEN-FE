@@ -1,0 +1,39 @@
+<div class="container-fluid bg-black py-2 py-md-4">
+  <header>
+    <div class="container">
+      <div
+        class="row flex-nowrap flex-column flex-md-row justify-content-center justify-content-md-between gap-3 gap-md-0"
+      >
+        <div class="wrapper">
+          <img
+            src="../../../assets/Logo-white.png"
+            class="img-fluid logo"
+            alt="logo"
+          />
+          <app-view-profile class="d-md-none"></app-view-profile>
+        </div>
+        <app-searchbar></app-searchbar>
+        <div class="wrapper">
+          <button mat-icon-button class="d-md-none">
+            <mat-icon class="text-white">menu</mat-icon>
+          </button>
+          <div class="d-flex align-items-center gap-4 gap-lg-5 w-auto">
+            <app-header-badge
+              icon="favorite_border"
+              text="Saved"
+            ></app-header-badge>
+            <app-header-badge
+              icon="shopping_cart"
+              [label]="1"
+              text="Cart"
+            ></app-header-badge>
+            <app-view-profile class="d-none d-md-block"></app-view-profile>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-between mt-4">
+        <button mat-button *ngFor="let item of categories" class="w-auto rounded-5 px-3">{{item}}</button>
+      </div>
+    </div>
+  </header>
+</div>
