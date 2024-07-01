@@ -1,0 +1,59 @@
+.men-product-card {
+  overflow: hidden;
+  cursor: pointer;
+  .men-product-card-img-container {
+    width: 100% !important;
+    height: 14rem !important;
+    overflow: hidden;
+
+    .men-product-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover !important;
+      object-position: center;
+    }
+  }
+
+  .men-product-card-content {
+    display: flex;
+    flex-flow: column;
+    align-self: stretch;
+    justify-self: stretch;
+    color: var(--text-dark);
+
+    > span:first-child {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .men-saved-price {
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .men-saved-icon {
+      transition: all 0.1s ease-in-out;
+    }
+
+  }
+}
+
+.toggle {
+  color: red;
+}
+
+.men-product-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  transform: scale(1.1);
+}
+
+@media (max-width:768px) {
+  .men-product-card:hover {
+    // box-shadow: none;
+    transform: none;
+
+    .men-product-card-img {
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="men-product-card d-flex flex-column mb-md-3">
+  <div class="men-product-card-img-container">
+    <img [src]="item.imageUrl" [alt]="item.name" class="men-product-card-img" />
+  </div>
+  <div class="men-product-card-content px-3 py-2 mt-2">
+    <span>{{ item.name }}</span>
+    <div
+      class="d-flex align-self-stretch justify-content-between align-items-center"
+    >
+      <span class="men-saved-price">{{ item.price }}</span>
+      <button mat-icon-button (click)="onSave()">
+        <mat-icon class="men-saved-icon"
+        [ngClass]="{'toggle':saved}"
+        >{{savedBtn}}</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

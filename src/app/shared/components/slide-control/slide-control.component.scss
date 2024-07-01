@@ -1,0 +1,41 @@
+
+.men-slider-control {
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  z-index: 20;
+
+  .men-slider-control-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    gap: 20px;
+    .men-arrow-btn{
+      color: var(--text-white);
+      border: 1px solid var(--text-white) !important;
+
+    }
+
+    .men-dots {
+      display: flex;
+
+
+      mat-icon {
+        font-size: 10px;
+      }
+
+      .men-dot-active {
+        color: var(--text-white) !important;
+      }
+    }
+
+  }
+
+}

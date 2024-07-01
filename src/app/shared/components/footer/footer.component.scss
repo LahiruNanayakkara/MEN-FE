@@ -1,0 +1,36 @@
+.search-bar {
+  display: flex;
+  width: 80%;
+  // min-width: fit-content;
+  background: var(--text-white);
+  input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: var(--text-dark) !important;
+  }
+
+  button {
+    background-color: black;
+  }
+}
+
+.footer-icon {
+  opacity: 0.8;
+  padding: 0.75rem;
+  border: 2px solid #ffffff60;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 992px) {
+  .search-bar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+  }
+}

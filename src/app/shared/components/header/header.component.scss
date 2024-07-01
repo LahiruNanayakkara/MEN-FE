@@ -15,14 +15,29 @@ app-searchbar {
   align-items: center;
 }
 
+
 @media (min-width: 768px) {
   .wrapper {
     width: auto;
   }
 }
 
+// @media (max-width: 992px) {
+
+//   .men-categories {
+//     width: auto;
+//     height: fit-content;
+//   }
+// }
+
 @media (max-width: 768px) {
   .logo {
     width: 6rem;
   }
+}
+
+header {
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
 }

@@ -1,23 +1,23 @@
-<div class="container-fluid bg-black py-2 py-md-4">
-  <header>
+<header class="d-flex flex-column">
+  <div class="container-fluid bg-black pt-4 pb-4 z-3">
     <div class="container">
       <div
         class="row flex-nowrap flex-column flex-md-row justify-content-center justify-content-md-between gap-3 gap-md-0"
       >
         <div class="wrapper">
-          <img
-            src="../../../assets/Logo-white.png"
-            class="img-fluid logo"
-            alt="logo"
-          />
-          <app-view-profile class="d-md-none"></app-view-profile>
-        </div>
-        <app-searchbar></app-searchbar>
-        <div class="wrapper">
-          <button mat-icon-button class="d-md-none">
-            <mat-icon class="text-white">menu</mat-icon>
-          </button>
-          <div class="d-flex align-items-center gap-4 gap-lg-5 w-auto">
+          <div class="d-flex align-items-center gap-2">
+            <button mat-icon-button class="d-md-none">
+              <mat-icon class="text-white">menu</mat-icon>
+            </button>
+            <img
+              src="../../../assets/Logo-white.png"
+              class="img-fluid logo"
+              alt="logo"
+            />
+          </div>
+          <div
+            class="d-flex d-md-none align-items-center gap-3 gap-lg-5 w-auto"
+          >
             <app-header-badge
               icon="favorite_border"
               text="Saved"
@@ -27,13 +27,60 @@
               [label]="1"
               text="Cart"
             ></app-header-badge>
-            <app-view-profile class="d-none d-md-block"></app-view-profile>
+            <button mat-flat-button *ngIf="false">Sign Up</button>
           </div>
         </div>
-      </div>
-      <div class="row justify-content-between mt-4">
-        <button mat-button *ngFor="let item of categories" class="w-auto rounded-5 px-3">{{item}}</button>
+        <app-searchbar></app-searchbar>
+
+        <div class="d-none d-md-flex align-items-center gap-4 gap-lg-5 w-auto">
+          <app-header-badge
+            icon="favorite_border"
+            text="Saved"
+          ></app-header-badge>
+          <app-header-badge
+            icon="shopping_cart"
+            [label]="1"
+            text="Cart"
+          ></app-header-badge>
+          <app-view-profile class="d-none d-md-block"></app-view-profile>
+        </div>
       </div>
     </div>
-  </header>
-</div>
+  </div>
+  <div
+    class="d-none d-md-flex container-fluid bg-black pb-4 z-2"
+    *ngIf="isCategoriesVisible"
+    [@slideIn]="isCategoriesVisible"
+  >
+    <div class="container">
+      <div
+        class="d-none d-md-flex flex-nowrap gap-1 justify-content-between align-items-center"
+      >
+        <a
+          *ngFor="let item of categories"
+          class="men-categories men-menu-links px-2"
+          >{{ item }}</a
+        >
+        <div class="dropdown men-dropdown">
+          <a
+            class="men-menu-links d-flex align-items-center text-decoration-none px-2"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >More
+            <mat-icon>arrow_drop_down</mat-icon>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="dropdownMenuButton1"
+          >
+            <li>
+              <a class="dropdown-item" href="#" *ngFor="let item of moreItems">
+                <span>{{ item }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

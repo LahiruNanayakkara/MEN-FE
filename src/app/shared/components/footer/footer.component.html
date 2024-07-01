@@ -1,0 +1,140 @@
+<footer>
+  <div class="container-fluid bg-black text-white mt-5 py-4">
+    <div class="container">
+      <div class="d-flex flex-wrap my-5 gap-4 gap-lg-0">
+        <div
+          class="col-12 col-lg-6 d-flex justify-content-between align-items-center gap-4"
+        >
+          <mat-icon class="fs-2 p-4" style="transform: rotate(-45deg)"
+            >send</mat-icon
+          >
+          <p class="men-text-highlight pe-lg-4 m-0">
+            Subscribe our newsletter & get all our news about new products,
+            offers and blogs
+          </p>
+        </div>
+        <div
+          class="col-12 col-lg-6 d-flex flex-column align-items-lg-end gap-2 p-4"
+        >
+          <p class="small m-0" *ngIf="true">*Subscription offers</p>
+          <div class="d-flex w-100 justify-content-lg-end">
+            <div class="search-bar p-1 rounded-1">
+              <input
+                type="text"
+                class="text-white px-3 flex-fill"
+                placeholder="Enter your email address..."
+              />
+              <button mat-flat-button class="py-4">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div
+        class="d-flex flex-column flex-lg-row justify-content-between flex-nowrap my-5 gap-5 px-4"
+      >
+        <div class="col-lg-3 d-flex flex-column gap-4">
+          <div
+            class="d-flex flex-column gap-4 flex-lg-row flex-lg-column justify-content-between w-auto align-items-md-center align-items-lg-start"
+          >
+            <img
+              src="../../../../assets/Logo-white.png"
+              width="140rem"
+              alt="men-logo"
+            />
+            <div
+              class="d-flex flex-column align-items-md-center align-items-lg-start gap-4"
+            >
+              <div class="d-flex justify-content-md-center justify-content-lg-start align-items-center gap-4 w-auto">
+                <!-- <div class="d-flex align-items-center gap-2">
+                  <mat-icon class="">location_on</mat-icon>
+                  <span class="lh-lg">Address&nbsp;:</span>
+                </div> -->
+                <mat-icon class="footer-icon">location_on</mat-icon>
+                <p class="men-text-secondary m-0 lh-lg col-8">
+                  Sri Jinarathana mv, Harumalgoda-west, Angulugaha
+                </p>
+              </div>
+              <div class="d-flex justify-content-md-center justify-content-lg-start align-items-center gap-4 w-auto">
+                <!-- <div class="d-flex align-items-center gap-2">
+                  <mat-icon class="">phone</mat-icon>
+                  <span class="lh-lg">Telephone&nbsp;:</span>
+                </div> -->
+                <mat-icon class="footer-icon">phone</mat-icon>
+                <p class="men-text-secondary m-0 lh-lg">94 760 944 045</p>
+              </div>
+              <div class="d-flex justify-content-md-center justify-content-lg-start align-items-center gap-4 w-auto">
+                <!-- <div class="d-flex align-items-center gap-2">
+                  <mat-icon class="">email</mat-icon>
+                  <span class="lh-lg">Email Address&nbsp;:</span>
+                </div> -->
+                <mat-icon class="footer-icon">email</mat-icon>
+                <p class="men-text-secondary m-0 lh-lg">info&#64;men.lk</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-12 col-lg-6 d-flex flex-column flex-md-row justify-content-between gap-4"
+        >
+          <div class="col-12 col-md-4 d-flex flex-column gap-4">
+            <div class="men-text-highlight mt-2">Pages</div>
+            <div class="d-flex flex-column align-items-start gap-3">
+              <a
+                class="men-text-secondary men-menu-links m-0"
+                *ngFor="let item of pages"
+              >
+                {{ item }}
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 d-flex flex-column gap-4">
+            <div class="men-text-highlight mt-2">Categories</div>
+            <div class="d-flex flex-column align-items-start gap-3">
+              <a
+                class="men-text-secondary men-menu-links m-0"
+                *ngFor="let item of categories"
+              >
+                {{ item }}
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 d-flex flex-column gap-4">
+            <div class="men-text-highlight mt-2">Support</div>
+            <div class="d-flex flex-column align-items-start gap-3">
+              <a
+                class="men-text-secondary men-menu-links m-0"
+                *ngFor="let item of support"
+              >
+                {{ item }}
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column align-self-md-center align-self-lg-auto gap-4 w-auto"
+        >
+          <div class="men-text-highlight mt-2">Social Media</div>
+          <div
+            class="d-flex justify-content-md-center justify-content-lg-start gap-3"
+          >
+            <mat-icon class="footer-icon">facebook</mat-icon>
+            <mat-icon class="footer-icon">tiktok</mat-icon>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex flex-column-reverse flex-md-row justify-content-between align-items-start align-items-md-center flex-nowrap gap-4 pt-2 px-4"
+      >
+        <span class="small">© 2024 - All Rights Reserved by MEN</span>
+        <img
+          src="../../../../assets/payment-methods.png"
+          class="object-fit-cover opacity-75"
+          height="30px"
+          width="auto"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</footer>

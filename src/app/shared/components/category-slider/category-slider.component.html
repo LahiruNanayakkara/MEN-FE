@@ -1,0 +1,49 @@
+<section>
+  <div class="container-fluid position-relative p-0">
+    <!-- <div class="slider swiper">
+      <div class="slider-inner row flex-nowrap swiper-wrapper">
+        <app-category-card
+          class="col-12 col-md-4 col-lg-3 slider-card p-0"
+          [bgImage]="item.bgImage"
+          [title]="item.name"
+          *ngFor="let item of categories"
+        ></app-category-card>
+        <app-category-card
+          class="d-none d-md-block col-12 col-md-4 col-lg-3 slider-card p-0"
+          [bgImage]="item.bgImage"
+          [title]="item.name"
+          *ngFor="let item of categories"
+          aria-hidden="true"
+        ></app-category-card>
+      </div>
+    </div> -->
+      <swiper-container
+      class="bg-black"
+      loop="true"
+      autoplay="true"
+      autoplay-delay="2000"
+      watch-slides-progress="true"
+      space-between="0"
+      [breakpoints]="breakpoints"
+      >
+        <swiper-slide *ngFor="let item of categories">
+          <app-category-card
+            class=""
+            [bgImage]="item.bgImage"
+            [title]="item.name"
+          ></app-category-card>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  <!-- <swiper-container slides-per-view="4"  loop="false" css-mode="true" autoplay="true">
+    <swiper-slide
+    *ngFor="let item of categories"
+    >
+      <app-category-card
+          class="col-12 col-md-4 col-lg-3 slider-card p-0"
+          [bgImage]="item.bgImage"
+          [title]="item.name"
+        ></app-category-card>
+    </swiper-slide>
+  </swiper-container> -->
+</section>

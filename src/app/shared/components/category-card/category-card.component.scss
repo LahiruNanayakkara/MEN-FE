@@ -1,0 +1,97 @@
+.men-category-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+
+  .men-category-card-image {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.2s ease !important;
+
+  }
+
+  .men-category-card-body {
+    display: flex;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.5) 100%);
+    position: absolute;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    // padding-top: 54%;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+
+
+    .men-category-card-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-white);
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 130%;
+    }
+
+  }
+
+}
+
+
+
+.men-category-card-btn {
+  opacity: 0;
+  transition: all 0.2s ease  !important;
+}
+
+.men-category-card:hover .men-category-card-image {
+  filter: blur(5px);
+  filter: grayscale(100%);
+  -webkit-filter: blur(5px);
+  transform: scale(1.1);
+
+}
+
+.men-category-card:hover .men-category-card-btn
+ {
+  opacity: 1 !important;
+ }
+
+
+ @media (max-width:992px) {
+
+  .men-category-card-image {
+    max-height: 26rem;
+  }
+
+  .men-category-card-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width:768px) {
+
+  .men-category-card-btn {
+    opacity: 1;
+  }
+}
+
+@media (min-width:768px) {
+
+  .men-category-card-title {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width:592px) {
+
+  .men-category-card-image {
+    height: 36rem !important;
+    max-height: 36rem;
+  }
+}
