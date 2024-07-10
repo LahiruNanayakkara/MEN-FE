@@ -7,80 +7,122 @@ import { Product } from '../../../models/product';
   styleUrl: './product-list.component.scss',
 })
 export class ProductListComponent implements OnInit {
-
   products!: Product[];
 
   dropdownItems = [
     {
-      text:"My Account",
-      icon:"person_outline"
+      text: 'My Account',
+      icon: 'person_outline',
     },
     {
-      text:"Settings",
-      icon:"tune"
+      text: 'Settings',
+      icon: 'tune',
     },
     {
-      text:"Logout",
-      icon:"logout"
-    }
-  ]
+      text: 'Logout',
+      icon: 'logout',
+    },
+  ];
 
   ngOnInit(): void {
     this.products = [
       {
-        id:0,
-        name:"Comfort Fit Crew Neck T-shirt",
-        description:"",
-        category:"T-Shirts",
-        imageUrl:"../../../../assets/shirts.jpg",
-        price:3.33,
-        stock:10
+        "id": 1,
+        "name": "Men's Casual Shirt",
+        "description": "A comfortable and stylish casual shirt for men.",
+        "price": 29.99,
+        "category": "Men",
+        "sizes": ["S", "M", "L", "XL"],
+        "colors": ["Red", "Blue", "Green"],
+        "brand": "BrandName",
+        "material": "Cotton",
+        "stockQuantity": 100,
+        "images": [
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
+        ]
       },
       {
-        id:0,
-        name:"Comfort Fit Crew Neck T-shirt",
-        description:"",
-        category:"T-Shirts",
-        imageUrl:"../../../../assets/shirts.jpg",
-        price:3.33,
-        stock:10
+        "id": 1,
+        "name": "Men's Casual Shirt",
+        "description": "A comfortable and stylish casual shirt for men.",
+        "price": 29.99,
+        "category": "Men",
+        "sizes": ["S", "M", "L", "XL"],
+        "colors": ["Red", "Blue", "Green"],
+        "brand": "BrandName",
+        "material": "Cotton",
+        "stockQuantity": 100,
+        "images": [
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
+        ]
       },
       {
-        id:0,
-        name:"Comfort Fit Crew Neck T-shirt",
-        description:"",
-        category:"T-Shirts",
-        imageUrl:"../../../../assets/shirts.jpg",
-        price:3.33,
-        stock:10
+        "id": 1,
+        "name": "Men's Casual Shirt",
+        "description": "A comfortable and stylish casual shirt for men.",
+        "price": 29.99,
+        "category": "Men",
+        "sizes": ["S", "M", "L", "XL"],
+        "colors": ["Red", "Blue", "Green"],
+        "brand": "BrandName",
+        "material": "Cotton",
+        "stockQuantity": 100,
+        "images": [
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
+        ]
       },
       {
-        id:0,
-        name:"Comfort Fit Crew Neck T-shirt",
-        description:"",
-        category:"T-Shirts",
-        imageUrl:"../../../../assets/shirts.jpg",
-        price:3.33,
-        stock:10
+        "id": 1,
+        "name": "Men's Casual Shirt",
+        "description": "A comfortable and stylish casual shirt for men.",
+        "price": 29.99,
+        "category": "Men",
+        "sizes": ["S", "M", "L", "XL"],
+        "colors": ["Red", "Blue", "Green"],
+        "brand": "BrandName",
+        "material": "Cotton",
+        "stockQuantity": 100,
+        "images": [
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
+        ]
       },
       {
-        id:0,
-        name:"Comfort Fit Crew Neck T-shirt",
-        description:"",
-        category:"T-Shirts",
-        imageUrl:"../../../../assets/shirts.jpg",
-        price:3.33,
-        stock:10
+        "id": 1,
+        "name": "Men's Casual Shirt",
+        "description": "A comfortable and stylish casual shirt for men.",
+        "price": 29.99,
+        "category": "Men",
+        "sizes": ["S", "M", "L", "XL"],
+        "colors": ["Red", "Blue", "Green"],
+        "brand": "BrandName",
+        "material": "Cotton",
+        "stockQuantity": 100,
+        "images": [
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
+        ]
       },
       {
-        id:0,
-        name:"Comfort Fit Crew Neck T-shirt",
-        description:"",
-        category:"T-Shirts",
-        imageUrl:"../../../../assets/shirts.jpg",
-        price:3.33,
-        stock:10
-      }
-    ]
+        "id": 1,
+        "name": "Men's Casual Shirt",
+        "description": "A comfortable and stylish casual shirt for men.",
+        "price": 29.99,
+        "category": "Men",
+        "sizes": ["S", "M", "L", "XL"],
+        "colors": ["Red", "Blue", "Green"],
+        "brand": "BrandName",
+        "material": "Cotton",
+        "stockQuantity": 100,
+        "images": [
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
+          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
+        ]
+      },
+
+    ];
   }
 }

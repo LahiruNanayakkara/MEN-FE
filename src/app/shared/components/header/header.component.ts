@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { fadeIn, slideIn } from '../../../animations';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   isCategoriesVisible = true;
   previousScrollPosition: number = window.pageYOffset;
+  totalItemsInCart:number = 0;
 
   categories = [
     'Shrits & T-shirts',
@@ -34,7 +36,6 @@ export class HeaderComponent implements OnInit {
 
     if(currentScrollPosition > 200 && this.previousScrollPosition < currentScrollPosition){
       this.isCategoriesVisible = false;
-      console.log(currentScrollPosition);
     } else {
       this.isCategoriesVisible = true;
     }
@@ -43,12 +44,16 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  constructor() {
+  constructor(private cartService:CartService) {
     this.moreItems = []
   }
 
   ngOnInit(): void {
     this.moreItems= this.categories.splice(8);
+
+    this.cartService.getProducts().subscribe((res) => {
+      this.totalItemsInCart = res.length;
+    })
   }
 
 }

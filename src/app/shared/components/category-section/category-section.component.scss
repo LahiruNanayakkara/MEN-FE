@@ -1,0 +1,39 @@
+button:hover {
+  background-color: #ededed;
+}
+
+h2 {
+  font-size: 2rem !important;
+  margin: 0 !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  line-height: 130%;
+}
+
+.men-section {
+
+  .men-category-section-banner {
+    height: 20rem;
+
+    .men-category-section-title {
+      position: absolute;
+      background-color: #1e1e1e52;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-white);
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+
+}
+@media (max-width:767px) {
+  .men-category-section-banner {
+    height: 10rem !important;
+  }
+}

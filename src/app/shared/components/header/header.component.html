@@ -23,10 +23,11 @@
               text="Saved"
             ></app-header-badge>
             <app-header-badge
-              icon="shopping_cart"
-              [label]="1"
-              text="Cart"
-            ></app-header-badge>
+            [routerLink]="['/cart']"
+            icon="shopping_cart"
+            [label]="totalItemsInCart"
+            text="Cart"
+          ></app-header-badge>
             <button mat-flat-button *ngIf="false">Sign Up</button>
           </div>
         </div>
@@ -38,8 +39,9 @@
             text="Saved"
           ></app-header-badge>
           <app-header-badge
+            [routerLink]="['/cart']"
             icon="shopping_cart"
-            [label]="1"
+            [label]="totalItemsInCart"
             text="Cart"
           ></app-header-badge>
           <app-view-profile class="d-none d-md-block"></app-view-profile>
@@ -47,6 +49,7 @@
       </div>
     </div>
   </div>
+  <div class="d-flex justify-content-end"></div>
   <div
     class="d-none d-md-flex container-fluid bg-black pb-4 z-2"
     *ngIf="isCategoriesVisible"
@@ -58,12 +61,12 @@
       >
         <a
           *ngFor="let item of categories"
-          class="men-categories men-menu-links px-2"
+          class="men-categories men-menu-links text-white px-2"
           >{{ item }}</a
         >
         <div class="dropdown men-dropdown">
           <a
-            class="men-menu-links d-flex align-items-center text-decoration-none px-2"
+            class="men-menu-links d-flex text-white align-items-center text-decoration-none px-2"
             data-bs-toggle="dropdown"
             aria-expanded="false"
             >More

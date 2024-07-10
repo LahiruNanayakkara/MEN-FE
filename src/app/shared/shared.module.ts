@@ -12,6 +12,10 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { SlideControlComponent } from './components/slide-control/slide-control.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CategorySectionComponent } from './components/category-section/category-section.component';
+import { RouterModule } from '@angular/router';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +29,12 @@ import { FooterComponent } from './components/footer/footer.component';
     ProductListComponent,
     SlideControlComponent,
     FooterComponent,
+    CategorySectionComponent,
+    CartItemComponent,
+    CartSummaryComponent,
   ],
-  imports: [CommonModule, MaterialModule, ReactiveFormsModule, FormsModule],
-  exports: [HeaderComponent, CategorySliderComponent, ProductListComponent, FooterComponent],
+  imports: [CommonModule, MaterialModule, ReactiveFormsModule, FormsModule, RouterModule],
+  exports: [HeaderComponent, CategorySliderComponent, ProductCardComponent, ProductListComponent, FooterComponent, CategorySectionComponent, CartItemComponent, CartSummaryComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule {}
