@@ -1,43 +1,45 @@
 import { Component } from '@angular/core';
+import { fadeInOut } from '../../../animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  animations: [fadeInOut],
 })
 export class HomeComponent {
   values = [
     {
-      icon:"trend.svg",
-      title:"Trend-Forward Collections",
-      text:"Stay fashionable with our latest styles"
+      icon: 'trend.svg',
+      title: 'Trend-Forward Collections',
+      text: 'Stay fashionable with our latest styles',
     },
     {
-      icon:"shipping.svg",
-      title:"Fast Shipping",
-      text:"Get your new clothes quickly with our speedy shipping"
+      icon: 'shipping.svg',
+      title: 'Fast Shipping',
+      text: 'Get your new clothes quickly with our speedy shipping',
     },
     {
-      icon:"return.svg",
-      title:"Easy Returns and Exchanges",
-      text:"If it doesn't fit or you don't like it, return it easily"
+      icon: 'return.svg',
+      title: 'Easy Returns and Exchanges',
+      text: "If it doesn't fit or you don't like it, return it easily",
     },
     {
-      icon:"loyalty.svg",
-      title:"Loyalty Rewards",
-      text:"Earn rewards and discounts when you shop with us"
+      icon: 'loyalty.svg',
+      title: 'Loyalty Rewards',
+      text: 'Earn rewards and discounts when you shop with us',
     },
     {
-      icon:"secure.svg",
-      title:"Secured Payments",
-      text:"Pay with our safe and secure payment options"
+      icon: 'secure.svg',
+      title: 'Secured Payments',
+      text: 'Pay with our safe and secure payment options',
     },
     // {
     //   icon:"",
     //   title:"",
     //   text:""
     // }
-  ]
+  ];
 
   categories = [
     { name: 'Shrits & T-shirts', bgImage: 'shirts.jpg' },

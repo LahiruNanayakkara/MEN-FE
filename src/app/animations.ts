@@ -15,7 +15,7 @@ export const fade = trigger('fade', [
     style({
       opacity: 0,
       transform: 'translateY(20%)',
-    }),
+    })
   ),
   transition(':enter, :leave', [animate('1s 0.4s ease-in-out')]),
 ]);
@@ -42,11 +42,33 @@ export const slideIn = trigger('slideIn', [
   transition(':enter, :leave', [animate('0.4s 0.2s ease-in-out')]),
 ]);
 
-
 export const fadeIn = trigger('fadeIn', [
-  state('void', style({
-    opacity:0,
-    transform:'translateY(10%)'
-  })),
-  transition(':enter, :leave', animate('0.5s ease-in'))
+  state(
+    'void',
+    style({
+      opacity: 0,
+      transform: 'translateY(10%)',
+    })
+  ),
+  transition(':enter, :leave', animate('0.5s ease-in')),
 ]);
+
+export const fadeInOut = trigger('fadeInOut', [
+  state(
+    'in',
+    style({
+      opacity: 1,
+      transform: 'translateY(0%)',
+    })
+  ),
+  state(
+    'out',
+    style({
+      opacity: 0,
+      transform: 'translateY(30%)',
+    })
+  ),
+  transition('out => in', animate('0.5s linear')),
+  transition('in => out', animate('0.5s linear')),
+]);
+

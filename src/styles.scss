@@ -57,11 +57,29 @@ mat-icon {
   border-radius: 100px !important;
   border-width: 2px !important;
   border-color: #ffffffa0 !important;
+  background-color: black !important;
 }
 
 .men-btn-secondary {
   border-color: var(--text-secondary) !important;
   color: var(--text-dark) !important;
+}
+
+.men-btn-outline {
+  background-color: transparent !important;
+  color: var(--text-dark) !important;
+  border: 2px solid var(--text-dark) !important;
+}
+
+.men-btn-outline-light {
+  background-color: transparent !important;
+  color: var(--text-white) !important;
+  border: 2px solid var(--text-secondary-light) !important;
+}
+
+.men-btn-sm {
+  font-size: 0.5rem !important;
+  padding: 20px 15px !important;
 }
 
 .dropdown {
@@ -109,6 +127,23 @@ mat-icon {
 
 .men-text-secondary {
   color: var(--text-secondary-light);
+}
+
+.men-path {
+  > * {
+    cursor: pointer;
+  }
+
+  >*:hover {
+    color: black;
+    text-decoration: underline;
+  }
+}
+
+.men-path > .default:hover {
+  cursor: auto;
+  color: var(--text-secondary) !important;
+  text-decoration: none !important;
 }
 
 .men-menu-links {

@@ -1,4 +1,11 @@
 <div class="search-bar p-1 rounded-5">
-  <input type="text" class="text-white px-3 flex-fill" placeholder="What are you looking for...">
-  <button mat-icon-button><mat-icon class="text-white flex-fill">search</mat-icon></button>
+  <input
+    #searchBar
+    type="text"
+    class="text-white px-3 flex-fill"
+    placeholder="What are you looking for..."
+  />
+  <button mat-icon-button (click)="onSearch(searchBar.value)">
+    <mat-icon class="text-white flex-fill">search</mat-icon>
+  </button>
 </div>

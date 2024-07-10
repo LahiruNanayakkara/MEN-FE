@@ -1,0 +1,33 @@
+section:first-child {
+  padding-top: 10.5rem;
+  // background: var(--bg-gradient-dark) !important;
+}
+
+.men-banner {
+  background: var(--bg-gradient-dark) !important;
+  height: 24rem;
+  overflow: hidden;
+
+  .men-banner-title {
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+  line-height: 130% !important;
+  font-weight: 800;
+  letter-spacing: normal;
+  }
+
+  .men-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.1s linear;
+  }
+}
+
+@media (max-width:768px) {
+
+  .men-banner-img {
+    object-position: center;
+  }
+}

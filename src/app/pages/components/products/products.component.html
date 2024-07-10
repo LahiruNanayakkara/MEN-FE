@@ -1,0 +1,61 @@
+<section>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="men-banner my-5 rounded-2">
+        <div class="d-flex align-items-center px-4 h-100">
+          <div class="col-6 d-flex justify-content-start ps-lg-5 z-1">
+            <div @fade class="d-flex flex-column gap-3 mb-4">
+              <span class="text-white-50 men"
+                ><span class="men-menu-links" [routerLink]="'/home'">Home</span>
+                / Shop</span
+              >
+              <h1 class="m-0 men-banner-title">All Products</h1>
+            </div>
+          </div>
+          <div class="col-6 d-flex justify-content-center z-0 h-100">
+            <img
+              @zoomOut
+              class="men-banner-img"
+              src="../../../../assets/hero-man2.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="my-5">
+    <app-category-section class="" [category]="'shirts'">
+      <img
+        src="../../../../assets/Shirts&TShirts.jpg"
+        class="men-section-banner-image w-100 h-100 object-fit-cover"
+        style="object-position: center"
+        alt=""
+      />
+      <div class="section-title" style="font-size: 2rem">Shirts & T-Shrits</div>
+    </app-category-section>
+    <app-category-section class="" [category]="'trousers'">
+      <img
+        src="../../../../assets/pantsCollection.jpg"
+        class="men-section-banner-image w-100 h-100 object-fit-cover"
+        style="object-position: center"
+        alt=""
+      />
+      <div class="section-title" style="font-size: 2rem">
+        Pants
+      </div> </app-category-section
+    >
+    <!-- <app-category-section class="">
+      <img
+        src="../../../../assets/hoodies.jpg"
+        class="men-section-banner-image w-100 h-100 object-fit-cover"
+        style="object-position: center"
+        alt=""
+      />
+      <div class="section-title" style="font-size: 2rem">Hoodies</div>
+    </app-category-section> -->
+  </div>
+</section>

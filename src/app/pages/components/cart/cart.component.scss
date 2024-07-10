@@ -1,0 +1,16 @@
+section:first-child {
+  padding-top: 10.5rem;
+  // background: var(--bg-gradient-dark) !important;
+}
+
+.men-empty-cart-img-container {
+  width: 10rem;
+  height: 10rem;
+  background: #f4f4f4;
+  padding: 2rem;
+  border-radius: 50%;
+
+  img {
+    object-position: center;
+  }
+}

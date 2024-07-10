@@ -1,0 +1,33 @@
+.men-qty-btn {
+  background-color: #efefef;
+  color: var(--text-dark);
+  border: 2px solid #efefef;
+  width: 2.5rem;
+  padding: 0.6rem 0.2rem !important;
+  border-radius: 2px;
+}
+
+.men-qty-btn:hover {
+  border: 2px solid var(--text-dark);
+}
+
+
+.men-qty-btn:active {
+  background-color: #1e1e1e;
+  color: var(--text-white);
+}
+
+.men-qty-input {
+  width: 2.5rem;
+  padding: 0.6rem 0.2rem !important;
+  border: 2px solid #efefef;
+  border-radius: 2px;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        display: none;
+      }
+
+
