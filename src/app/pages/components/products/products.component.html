@@ -27,35 +27,22 @@
 </section>
 
 <section>
-  <div class="my-5">
-    <app-category-section class="" [category]="'shirts'">
-      <img
-        src="../../../../assets/Shirts&TShirts.jpg"
-        class="men-section-banner-image w-100 h-100 object-fit-cover"
-        style="object-position: center"
-        alt=""
-      />
-      <div class="section-title" style="font-size: 2rem">Shirts & T-Shrits</div>
-    </app-category-section>
-    <app-category-section class="" [category]="'trousers'">
-      <img
-        src="../../../../assets/pantsCollection.jpg"
-        class="men-section-banner-image w-100 h-100 object-fit-cover"
-        style="object-position: center"
-        alt=""
-      />
-      <div class="section-title" style="font-size: 2rem">
-        Pants
-      </div> </app-category-section
-    >
-    <!-- <app-category-section class="">
-      <img
-        src="../../../../assets/hoodies.jpg"
-        class="men-section-banner-image w-100 h-100 object-fit-cover"
-        style="object-position: center"
-        alt=""
-      />
-      <div class="section-title" style="font-size: 2rem">Hoodies</div>
-    </app-category-section> -->
+  <div class="container p-0 my-5">
+    <div class="container d-flex flex-column flex-md-row flex-nowrap">
+      <div class="col-12 col-md-3 pe-md-4">
+        <app-filters [categories]="categories"></app-filters>
+      </div>
+      <div class="col-12 col-md-9">
+        <app-category-section class="" [category]="category.name" *ngFor="let category of categories">
+          <img
+            [src]="category.bgImage"
+            class="men-section-banner-image w-100 h-100 object-fit-cover"
+            style="object-position: center"
+            alt=""
+          />
+          <div class="section-title" style="font-size: 2rem">{{category.name}}</div>
+        </app-category-section>
+      </div>
+    </div>
   </div>
 </section>

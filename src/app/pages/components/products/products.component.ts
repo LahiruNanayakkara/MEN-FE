@@ -1,5 +1,12 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { fade, zoomOut } from '../../../animations';
+import { ProductService } from '../../../services/product.service';
+import { categoryWithCount, Product } from '../../../models/product';
+
+export interface Category {
+  name:string;
+  bgImage:string;
+}
 
 @Component({
   selector: 'app-products',
@@ -7,7 +14,11 @@ import { fade, zoomOut } from '../../../animations';
   styleUrl: './products.component.scss',
   animations: [zoomOut, fade]
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
+  categories?:Category[];
+
+  productByCat:Product[] = [];
+  constructor(private productService:ProductService) {}
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
@@ -21,6 +32,12 @@ export class ProductsComponent {
     if (image) {
       image.style.transform = `scale(${scale})`;
     }
+  }
+
+  ngOnInit(): void {
+    this.categories = this.productService.categories;
+    this.productByCat = this.productService.getProductByCategory("Shrits & T-shirts");
+    console.log(this.productByCat);
   }
 
 }

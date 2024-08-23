@@ -13,6 +13,9 @@ import { SingleProductPageComponent } from './components/single-product-page/sin
 import { FormsModule } from '@angular/forms';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { CartComponent } from './components/cart/cart.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { CartComponent } from './components/cart/cart.component';
     SingleProductPageComponent,
     NotFoundPageComponent,
     CartComponent,
+    WishlistComponent,
+    CheckoutComponent,
+    PaymentComponent,
   ],
   imports: [CommonModule, SharedModule, MaterialModule, RouterModule, FormsModule],
   exports: [HomeComponent],

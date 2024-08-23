@@ -30,6 +30,11 @@
 
 @media (max-width:768px) {
 
+  .men-carousel {
+    height: 90svh;
+    min-height: fit-content;
+  }
+
   .men-hero-img {
     object-position: center;
   }

@@ -1,0 +1,48 @@
+<section>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="men-section my-5 pb-2">
+        <div
+          class="men-path d-flex align-items-center px-2 text-black-50 gap-1"
+        >
+          <mat-icon class="fs-5" [routerLink]="'/home'">home</mat-icon>
+          /
+          <span class="default">Wishlist</span>
+        </div>
+        <div class="row px-2 my-5" *ngIf="wishlist.length == 0">
+          <div class="">
+            <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+              <div class="men-empty-cart-img-container">
+                <img src="../../../../assets/icons/empty-wishlist.svg" class="object-fit-cover w-100 h-100" alt="">
+              </div>
+              <p class="text-center fs-5 m-0">Man! There are no favorites saved yet.</p>
+              <button mat-flat-button class="men-btn "
+              [routerLink]="['/shop']"
+              >Start Shopping</button>
+            </div>
+          </div>
+        </div>
+        <div class="row px-2 my-5" *ngIf="wishlist.length > 0">
+          <div class="col-12 d-flex flex-column gap-4 pe-md-5">
+            <div
+              class="d-flex justify-content-between align-items-center border-bottom pb-4 mb-2"
+            >
+              <h2 class="fs-2 text-uppercase m-0" style="font-weight: 800">
+                My Wishlist({{ wishlist.length }})
+              </h2>
+              <button mat-flat-button class="men-btn men-btn-outline men-btn-sm"
+              (click)="onClearWishlist()"
+              >
+                Clear All
+              </button>
+            </div>
+            <ng-container *ngFor="let item of wishlist; let last = last">
+              <app-saved-item [item]="item"></app-saved-item>
+              <hr *ngIf="!last" />
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

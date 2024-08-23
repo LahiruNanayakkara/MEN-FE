@@ -72,3 +72,13 @@ export const fadeInOut = trigger('fadeInOut', [
   transition('in => out', animate('0.5s linear')),
 ]);
 
+export const collapseble = trigger('collapseble', [
+  state(
+    'void',
+    style({
+      opacity:0,
+      transform: 'translateY(-100%)',
+    })
+  ),
+  transition(':enter, :leave', animate('0.5s ease-out')),
+]);

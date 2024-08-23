@@ -9,8 +9,16 @@ import { CartItem } from '../models/cartItem';
 export class CartService {
   public cartList: CartItem[] = [];
   public productList = new BehaviorSubject<CartItem[]>([]);
+  total = new BehaviorSubject<number>(0);
+  subtotal = new BehaviorSubject<number>(0);
+  discount = new BehaviorSubject<number>(0);
+  shipping = new BehaviorSubject<number>(50);
 
+  subtotal$ = this.subtotal.asObservable();
+  shipping$ = this.shipping.asObservable();
   cart$ = this.productList.asObservable();
+  total$ = this.total.asObservable();
+  discount$ = this.discount.asObservable();
 
   constructor() {}
 
@@ -18,8 +26,13 @@ export class CartService {
     return this.productList.asObservable();
   }
 
-  setProduct(product: CartItem) {
-    this.cartList.push(product);
+  setDiscount(amount: number) {
+    this.discount.next(amount);
+    this.calculateTotal();
+  }
+
+  getDiscount() {
+    return this.discount.asObservable();
   }
 
   addToCart(item: CartItem) {
@@ -34,11 +47,11 @@ export class CartService {
     } else {
       this.cartList.push(item);
     }
-    this.getTotalPrice();
     this.productList.next(this.cartList);
+    this.calculateTotal();
   }
 
-  updateCartItem(item:CartItem) {
+  updateCartItem(item: CartItem) {
     const index = this.cartList.findIndex(
       (i) =>
         i.productId === item.productId &&
@@ -50,14 +63,17 @@ export class CartService {
     }
     this.cartList[index].quantity = item.quantity;
     this.productList.next(this.cartList);
+    this.calculateTotal();
   }
 
-  getTotalPrice() {
-    let total = 0;
-    this.cartList.map((product: CartItem) => {
-      total += product.price*product.quantity;
-    });
-    return total;
+  calculateTotal() {
+    const subtotal = this.productList.value.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
+    this.subtotal.next(subtotal);
+    const discount = subtotal*this.discount.value/100;
+    this.total.next(subtotal + this.shipping.value - discount);
   }
 
   removeFromCart(productId: number, size?: string, color?: string) {
@@ -67,13 +83,13 @@ export class CartService {
         item.size !== size ||
         item.color !== color
     );
-    this.getTotalPrice();
     this.productList.next(this.cartList);
+    this.calculateTotal();
   }
 
   clearCart() {
     this.cartList = [];
-    this.getTotalPrice();
     this.productList.next(this.cartList);
+    this.calculateTotal();
   }
 }

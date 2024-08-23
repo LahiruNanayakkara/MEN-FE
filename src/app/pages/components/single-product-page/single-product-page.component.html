@@ -16,27 +16,36 @@
         <div class="row row-cols-1 row-cols-md-2 my-5 gap-4 gap-md-0">
           <div class="col d-flex flex-column-reverse flex-md-row gap-2">
             <div
-              class="col-12 col-md-2 d-flex justify-content-center justify-content-md-start flex-md-column gap-2 gap-md-2"
-              style="height: 7.5rem"
+              class="col-12 col-md-2 d-flex align-self-center align-self-md-start justify-content-center justify-content-md-start flex-md-column gap-2 gap-md-2"
+              style="height: 7.5rem; width: fit-content;"
             >
-              <img
-                *ngFor="let image of product?.images"
-                [src]="image"
-                class="w-auto h-100 object-fit-cover rounded-1"
-                alt=""
+              <ng-container *ngFor="let image of product?.images">
+                <img
+                [src]="image.imageUrl"
+                class="w-100 h-100 object-fit-cover rounded-1 men-pointer"
+                [alt]="product!.name + image.color"
+                (click)="onImageSelect(image.color)"
               />
+              </ng-container>
             </div>
-            <div class="col-12 col-md-10 pe-md-2" style="height: 40rem">
+            <div class="col-12 col-md-10 pe-md-2 men-item-img">
               <img
-                [src]="product!.images[0]"
+                [src]="selectedImg"
                 class="w-100 h-100 object-fit-cover rounded-2"
                 alt=""
               />
             </div>
           </div>
-          <div class="col d-flex flex-column gap-4 ps-md-4">
+          <div class="col d-flex flex-column gap-4 gap-md-3 ps-md-4">
             <div class="d-flex flex-column gap-2">
-              <h1 class="men-product-title m-0">{{ product?.name }}</h1>
+              <div class="d-flex justify-content-between align-items-start">
+                <h1 class="men-product-title m-0">{{ product?.name }}</h1>
+              <button mat-icon-button (click)="onSave()" style="background: #f4f4f4b7;">
+                <mat-icon class="men-saved-icon" [ngClass]="{ toggle: isInWishList }">{{
+                  savedBtn
+                }}</mat-icon>
+              </button>
+              </div>
               <p class="men-product m-0">By {{ product?.brand }}</p>
             </div>
             <div class="d-flex flex-column gap-2">
@@ -63,7 +72,7 @@
               <div class="d-flex gap-2">
                 <button
                   [title]="color"
-                  (click)="onColorSelect(color)"
+                  (click)="onImageSelect(color)"
                   class="men-color-btn"
                   [ngClass]="{ 'color-selected': selectedColor == color }"
                   [style]="getColor(color)"
@@ -75,7 +84,7 @@
             </div>
             <div class="d-flex flex-column gap-4">
               <div>
-                <p [class.warn]="qtySelected==0 && showWarnings">Quntity</p>
+                <p>Quntity</p>
                 <div
                   class="d-flex justify-content-start align-items-center gap-2"
                 >
@@ -86,7 +95,7 @@
                     type="number"
                     class="men-qty-input"
                     [(ngModel)]="qtySelected"
-                    min="0"
+                    min="1"
                     [max]="product!.stockQuantity"
                   />
                   <button class="men-qty-btn" (click)="onSelectedQtyIncrease()">

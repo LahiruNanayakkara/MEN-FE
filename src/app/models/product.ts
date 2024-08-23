@@ -9,5 +9,21 @@ export interface Product {
   brand: string;
   material: string;
   stockQuantity: number;
-  images: string[]; // URLs to product images
+  images: itemImage[]; // URLs to product images
+}
+
+export interface itemImage {
+  color:string;
+  imageUrl: string;
+}
+
+
+export class categoryWithCount {
+  name:string;
+  count:number;
+
+  constructor(name:string) {
+    this.name = name;
+    this.count = 0;
+  }
 }

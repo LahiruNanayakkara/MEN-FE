@@ -8,6 +8,9 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatStepperModule} from '@angular/material/stepper';
+import { MatCheckboxModule } from '@angular/material/checkbox'
 
 @NgModule({
   declarations: [],
@@ -21,6 +24,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatSelectModule,
     MatMenuModule,
     MatButtonToggleModule,
+    MatDialogModule,
+    MatStepperModule,
+    MatCheckboxModule,
   ],
   exports: [
     MatFormFieldModule,
@@ -31,6 +37,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatSelectModule,
     MatMenuModule,
     MatButtonToggleModule,
+    MatDialogModule,
+    MatStepperModule,
+    MatCheckboxModule,
   ],
 })
 export class MaterialModule {}

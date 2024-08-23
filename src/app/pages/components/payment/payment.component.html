@@ -1,0 +1,40 @@
+<section>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="men-section my-5 pb-2">
+        <div
+          class="men-path d-flex align-items-center px-2 text-black-50 gap-1"
+        >
+          <mat-icon class="fs-5" [routerLink]="'/cart'">chevron_left</mat-icon>
+          <span class="" [routerLink]="'/checkout'">Back</span>
+        </div>
+        <div class="row px-2 my-5">
+          <div
+            class="col-12 col-lg-8 d-flex flex-column gap-4 pe-md-5"
+          >
+            <div
+              class="d-flex justify-content-start align-items-center gap-4 border-bottom pb-4 mb-2"
+            >
+              <h2 class="fs-2  m-0" style="font-weight: 800">
+                Order Confirmation
+              </h2>
+            </div>
+
+            <ng-container *ngFor="let item of cartList;let last = last">
+              <app-cart-item [item]="item"></app-cart-item>
+              <hr *ngIf="!last">
+            </ng-container>
+            <div class="d-flex flex-column gap-4"></div>
+          </div>
+          <div class="col-12 col-lg-4 mt-5 mt-lg-0">
+            <div class="d-flex flex-column gap-4">
+              <app-shipping-card></app-shipping-card>
+              <app-cart-summary [hideButton]="true"></app-cart-summary>
+              <button mat-flat-button class="men-btn rounded-2">Pay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
