@@ -7,6 +7,9 @@ import { SingleCategoryPageComponent } from './pages/components/single-category-
 import { SingleProductPageComponent } from './pages/components/single-product-page/single-product-page.component';
 import { NotFoundPageComponent } from './pages/components/not-found-page/not-found-page.component';
 import { CartComponent } from './pages/components/cart/cart.component';
+import { WishlistComponent } from './pages/components/wishlist/wishlist.component';
+import { CheckoutComponent } from './pages/components/checkout/checkout.component';
+import { PaymentComponent } from './pages/components/payment/payment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,6 +23,9 @@ const routes: Routes = [
 
   ] },
   { path:'cart', component:CartComponent },
+  { path:'wishlist', component:WishlistComponent },
+  { path:'checkout', component:CheckoutComponent },
+  { path:'payment', component:PaymentComponent },
   { path: 'search', component: SearchResultPageComponent },
   { path: '404', component: NotFoundPageComponent },
   { path: '**', redirectTo: '/home' },

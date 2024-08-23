@@ -10,7 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material.module';
 import { register as registerSwiperEliments } from 'swiper/element/bundle';
-
+import { PopupModule } from './popups/popup.module';
 registerSwiperEliments();
 
 @NgModule({
@@ -24,6 +24,7 @@ registerSwiperEliments();
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    PopupModule
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

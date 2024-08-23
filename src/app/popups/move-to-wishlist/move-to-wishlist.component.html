@@ -1,0 +1,20 @@
+<!-- my-dialog.component.html -->
+<div class="men-popup p-2">
+  <h1 mat-dialog-title class="text-black fw-bold mb-1" style="letter-spacing: normal;line-height: normal;">Are you sure about this?</h1>
+  <div mat-dialog-content>
+    <p class="" style="color: var(--text-dark); letter-spacing: normal;">This action will move the item to your wishlist.</p>
+  </div>
+  <mat-dialog-actions class="d-flex flex-column-reverse align-self-stretch gap-2">
+    <button mat-button mat-dialog-close class="men-btn men-btn-outline men-btn-sm w-100">
+      Cancel
+    </button>
+    <button
+      mat-button
+      [mat-dialog-close]="true"
+      class="men-btn men-btn-sm w-100 m-0"
+
+    >
+      OK
+    </button>
+  </mat-dialog-actions>
+</div>

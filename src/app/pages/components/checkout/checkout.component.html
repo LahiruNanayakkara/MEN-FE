@@ -1,0 +1,79 @@
+<section>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="men-section my-5 pb-2">
+        <div
+          class="men-path d-flex align-items-center px-2 text-black-50 gap-1"
+        >
+          <mat-icon class="fs-5" [routerLink]="'/cart'">chevron_left</mat-icon>
+          <span class="" [routerLink]="'/cart'">Back to cart</span>
+        </div>
+        <div class="row px-2 my-5">
+          <div
+            class="col-12 col-lg-8 d-flex flex-column gap-4 pe-md-5"
+          >
+            <!-- <div
+              class="d-flex justify-content-start align-items-center gap-2 border-bottom pb-4 mb-2"
+            >
+              <button
+                mat-icon-button
+                class="men-btn men-btn-outline men-btn-sm"
+              >
+                <mat-icon style="min-width: fit-content;">person</mat-icon>
+              </button>
+              <h2 class="fs-4  m-0" style="font-weight: 800">
+                Contact Details
+              </h2>
+            </div> -->
+            <div>
+              <div class="men-alert-secondary rounded-2 py-4">
+                Do you have an account?
+                <span class="men-pointer text-decoration-underline"
+                  >Sign in</span
+                >
+                for faster checkout.
+              </div>
+            </div>
+            <div class="d-flex flex-column gap-4">
+              <div class="d-flex flex-column gap-4">
+                <app-contact-form
+                  #ContactFormComponent
+                  (afterSubmitted)="onAfterForm1Submitted($event)"
+                  class="flex-fill"
+                >
+                  <div class="title">
+                    <h2 class="fs-5 fw-bold mb-4">Personal Details</h2>
+                  </div>
+                </app-contact-form>
+                <app-address-form
+                  #AddressFormComponent
+                  (afterSubmitted)="onAfterForm2Submitted($event)"
+                  class="flex-fill"
+                >
+                  <div class="title">
+                    <h2 class="fs-5 fw-bold mb-4">Shipping Details</h2>
+                  </div>
+                </app-address-form>
+              </div>
+              <div class="d-flex flex-column flex-md-row gap-4 justify-content-between align-items-stretch align-items-md-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="" type="checkbox" name="createAccount" id="createAccount">
+                  <label class="form-check-label small men-pointer" for="createAccount">Create account</label>
+                </div>
+                <button mat-flat-button class="men-btn rounded-2" (click)="onContinue()">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 mt-5 mt-lg-0">
+            <div class="d-flex flex-column gap-4">
+              <app-cart-summary [hideButton]="true"></app-cart-summary>
+              <app-items-in-bag></app-items-in-bag>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

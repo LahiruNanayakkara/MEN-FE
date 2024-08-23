@@ -16,6 +16,13 @@ import { CategorySectionComponent } from './components/category-section/category
 import { RouterModule } from '@angular/router';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { SavedItemComponent } from './components/saved-item/saved-item.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { AddressFormComponent } from './components/address-form/address-form.component';
+import { ItemsInBagComponent } from './components/items-in-bag/items-in-bag.component';
+import { ShippingCardComponent } from './components/shipping-card/shipping-card.component';
+import { CouponDetailsComponent } from './components/coupon-details/coupon-details.component';
+import { FiltersComponent } from './components/filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +39,38 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     CategorySectionComponent,
     CartItemComponent,
     CartSummaryComponent,
+    SavedItemComponent,
+    ContactFormComponent,
+    AddressFormComponent,
+    ItemsInBagComponent,
+    ShippingCardComponent,
+    CouponDetailsComponent,
+    FiltersComponent,
   ],
-  imports: [CommonModule, MaterialModule, ReactiveFormsModule, FormsModule, RouterModule],
-  exports: [HeaderComponent, CategorySliderComponent, ProductCardComponent, ProductListComponent, FooterComponent, CategorySectionComponent, CartItemComponent, CartSummaryComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [
+    CommonModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule,
+  ],
+  exports: [
+    HeaderComponent,
+    CategorySliderComponent,
+    ProductCardComponent,
+    ProductListComponent,
+    FooterComponent,
+    CategorySectionComponent,
+    CartItemComponent,
+    CartSummaryComponent,
+    SavedItemComponent,
+    ContactFormComponent,
+    AddressFormComponent,
+    ItemsInBagComponent,
+    ShippingCardComponent,
+    CouponDetailsComponent,
+    FiltersComponent,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SharedModule {}
