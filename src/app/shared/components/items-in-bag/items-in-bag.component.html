@@ -1,0 +1,8 @@
+<div class="men-bag gap-4 rounded-2 py-4">
+  <span style="font-size: 1.6rem; font-weight: 800">Bag</span>
+  <div class="d-flex flex-column gap-2">
+    <ng-container *ngFor="let item of cartList">
+      <app-cart-item [item]="item"></app-cart-item>
+    </ng-container>
+  </div>
+</div>

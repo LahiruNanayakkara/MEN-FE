@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../models/product';
+import { ProductService } from '../../../services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,6 +9,8 @@ import { Product } from '../../../models/product';
 })
 export class ProductListComponent implements OnInit {
   products!: Product[];
+
+  constructor(private productService:ProductService) {}
 
   dropdownItems = [
     {
@@ -25,104 +28,6 @@ export class ProductListComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.products = [
-      {
-        "id": 1,
-        "name": "Men's Casual Shirt",
-        "description": "A comfortable and stylish casual shirt for men.",
-        "price": 29.99,
-        "category": "Men",
-        "sizes": ["S", "M", "L", "XL"],
-        "colors": ["Red", "Blue", "Green"],
-        "brand": "BrandName",
-        "material": "Cotton",
-        "stockQuantity": 100,
-        "images": [
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
-        ]
-      },
-      {
-        "id": 1,
-        "name": "Men's Casual Shirt",
-        "description": "A comfortable and stylish casual shirt for men.",
-        "price": 29.99,
-        "category": "Men",
-        "sizes": ["S", "M", "L", "XL"],
-        "colors": ["Red", "Blue", "Green"],
-        "brand": "BrandName",
-        "material": "Cotton",
-        "stockQuantity": 100,
-        "images": [
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
-        ]
-      },
-      {
-        "id": 1,
-        "name": "Men's Casual Shirt",
-        "description": "A comfortable and stylish casual shirt for men.",
-        "price": 29.99,
-        "category": "Men",
-        "sizes": ["S", "M", "L", "XL"],
-        "colors": ["Red", "Blue", "Green"],
-        "brand": "BrandName",
-        "material": "Cotton",
-        "stockQuantity": 100,
-        "images": [
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
-        ]
-      },
-      {
-        "id": 1,
-        "name": "Men's Casual Shirt",
-        "description": "A comfortable and stylish casual shirt for men.",
-        "price": 29.99,
-        "category": "Men",
-        "sizes": ["S", "M", "L", "XL"],
-        "colors": ["Red", "Blue", "Green"],
-        "brand": "BrandName",
-        "material": "Cotton",
-        "stockQuantity": 100,
-        "images": [
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
-        ]
-      },
-      {
-        "id": 1,
-        "name": "Men's Casual Shirt",
-        "description": "A comfortable and stylish casual shirt for men.",
-        "price": 29.99,
-        "category": "Men",
-        "sizes": ["S", "M", "L", "XL"],
-        "colors": ["Red", "Blue", "Green"],
-        "brand": "BrandName",
-        "material": "Cotton",
-        "stockQuantity": 100,
-        "images": [
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
-        ]
-      },
-      {
-        "id": 1,
-        "name": "Men's Casual Shirt",
-        "description": "A comfortable and stylish casual shirt for men.",
-        "price": 29.99,
-        "category": "Men",
-        "sizes": ["S", "M", "L", "XL"],
-        "colors": ["Red", "Blue", "Green"],
-        "brand": "BrandName",
-        "material": "Cotton",
-        "stockQuantity": 100,
-        "images": [
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+1",
-          "https://via.placeholder.com/300x400.png?text=Men%27s+Casual+Shirt+2"
-        ]
-      },
-
-    ];
+    this.products = this.productService.products.slice(0,6)
   }
 }

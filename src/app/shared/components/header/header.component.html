@@ -1,5 +1,5 @@
 <header class="d-flex flex-column">
-  <div class="container-fluid bg-black pt-4 pb-4 z-3">
+  <div class="men-header container-fluid bg-black pt-3 pb-3 z-3">
     <div class="container">
       <div
         class="row flex-nowrap flex-column flex-md-row justify-content-center justify-content-md-between gap-3 gap-md-0"
@@ -21,13 +21,15 @@
             <app-header-badge
               icon="favorite_border"
               text="Saved"
+              [routerLink]="['/wishlist']"
+              [label]="totalItemsInWishlist"
             ></app-header-badge>
             <app-header-badge
-            [routerLink]="['/cart']"
-            icon="shopping_cart"
-            [label]="totalItemsInCart"
-            text="Cart"
-          ></app-header-badge>
+              [routerLink]="['/cart']"
+              icon="shopping_cart"
+              [label]="totalItemsInCart"
+              text="Cart"
+            ></app-header-badge>
             <button mat-flat-button *ngIf="false">Sign Up</button>
           </div>
         </div>
@@ -37,6 +39,8 @@
           <app-header-badge
             icon="favorite_border"
             text="Saved"
+            [routerLink]="['/wishlist']"
+            [label]="totalItemsInWishlist"
           ></app-header-badge>
           <app-header-badge
             [routerLink]="['/cart']"
@@ -49,41 +53,42 @@
       </div>
     </div>
   </div>
-  <div class="d-flex justify-content-end"></div>
-  <div
-    class="d-none d-md-flex container-fluid bg-black pb-4 z-2"
-    *ngIf="isCategoriesVisible"
-    [@slideIn]="isCategoriesVisible"
-  >
-    <div class="container">
-      <div
-        class="d-none d-md-flex flex-nowrap gap-1 justify-content-between align-items-center"
-      >
-        <a
-          *ngFor="let item of categories"
-          class="men-categories men-menu-links text-white px-2"
-          >{{ item }}</a
+  <nav class="men-navbar">
+    <div class="d-none d-md-flex container-fluid bg-black pb-3 z-2">
+      <div class="container">
+        <div
+          class="d-none d-md-flex flex-nowrap gap-1 justify-content-between align-items-center"
         >
-        <div class="dropdown men-dropdown">
           <a
-            class="men-menu-links d-flex text-white align-items-center text-decoration-none px-2"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            >More
-            <mat-icon>arrow_drop_down</mat-icon>
-          </a>
-          <ul
-            class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="dropdownMenuButton1"
+            *ngFor="let item of categories"
+            class="men-categories men-menu-links text-white px-2"
+            >{{ item }}</a
           >
-            <li>
-              <a class="dropdown-item" href="#" *ngFor="let item of moreItems">
-                <span>{{ item }}</span>
-              </a>
-            </li>
-          </ul>
+          <div class="dropdown men-dropdown">
+            <a
+              class="men-menu-links d-flex text-white align-items-center text-decoration-none px-2"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              >More
+              <mat-icon>arrow_drop_down</mat-icon>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdownMenuButton1"
+            >
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  *ngFor="let item of moreItems"
+                >
+                  <span>{{ item }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </nav>
 </header>

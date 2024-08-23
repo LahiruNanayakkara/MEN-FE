@@ -1,16 +1,17 @@
 <div class="d-flex justify-content-between">
   <div class="d-flex gap-4">
     <img
-      [src]="product!.images[0]"
-      [alt]="product!.name"
-      class="img-fluid object-fit-cover"
+      (click)="onNavigate()"
+      [src]="imgUrl"
+      [alt]="product!.name + item.color"
+      class="img-fluid object-fit-cover men-pointer"
       width="120rem"
     />
     <div class="d-flex flex-column gap-2">
-      <span class="fs-5 fw-bold">{{ item.name }}</span>
-      <span class="">${{ item.price }}</span>
-      <span *ngIf="item.color" class="">{{ item.color }}</span>
+      <span class="men-pointer" (click)="onNavigate()">{{ item.name }}</span>
+      <span class="fw-bold">${{ item.price }}</span>
       <div class="d-flex gap-2">
+        <span *ngIf="item.color" class="">{{ item.color }}</span>
         <span *ngIf="item.size" class="">{{ item.size }}</span>
         <span class="">x {{ item.quantity }}</span>
       </div>
@@ -33,5 +34,12 @@
       </div>
     </div>
   </div>
-  <button mat-icon-button (click)="onRemoveFromCart(item)"><mat-icon>close</mat-icon></button>
+  <div class="d-flex align-self-start flex-column-reverse flex-lg-row flex-wrap-reverse justify-content-lg-end align-items-lg-start gap-2">
+    <button mat-icon-button (click)="onMoveToWishlist()">
+      <mat-icon>favorite_outline</mat-icon>
+    </button>
+    <button mat-icon-button (click)="openDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
 </div>

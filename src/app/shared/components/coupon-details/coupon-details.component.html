@@ -1,0 +1,37 @@
+<div class="men-coupon-details gap-4 rounded-2 py-4">
+  <span style="font-size: 1.6rem; font-weight: 800">Coupon Details</span>
+  <div class="d-flex flex-column gap-2">
+    <!-- <p class="m-0">Do you have a coupon available?</p> -->
+    <div>
+      <div class="form-control men-form-control p-0 flex-fill">
+        <div class="d-flex align-items-stretch flex-nowrap">
+          <input
+            class="flex-fill rounded-start-2"
+            type="text"
+            placeholder="Enter promo code"
+            [(ngModel)]="promoCode"
+          />
+          <button
+            *ngIf="!isApplied"
+            (click)="onApplyCoupon()"
+            mat-flat-button
+            class="men-btn rounded-0 rounded-end-2"
+            style="border: 1px solid"
+          >
+            Apply
+          </button>
+          <button
+            *ngIf="isApplied"
+            (click)="onRemoveCoupon()"
+            mat-flat-button
+            class="men-btn rounded-0 rounded-end-2"
+            style="border: 1px solid"
+          >
+            Remove
+          </button>
+        </div>
+        <span *ngIf="isCouponInvalid" class="text-danger">Please enter a valid coupen!</span>
+      </div>
+    </div>
+  </div>
+</div>

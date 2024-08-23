@@ -1,11 +1,22 @@
 <div class="d-flex gap-2 text-white align-items-center">
-  <mat-icon>{{ icon }}</mat-icon>
-  <div class="d-flex align-items-start flex-column">
+  <mat-icon class="d-none d-md-flex">{{ icon }}</mat-icon>
+  <div class="d-none d-md-flex align-items-start flex-column">
     <span
       class="badge justify-content-center bg-danger rounded-5"
       *ngIf="label != 0"
       >{{ label }}</span
     >
     <span class="small">{{ text }}</span>
+  </div>
+  <div class="d-flex align-items-start d-md-none position-relative">
+    <button mat-icon-button>
+      <mat-icon>{{ icon }}</mat-icon>
+    </button>
+    <span
+      class="badge justify-content-center bg-danger rounded-5 small"
+      style="position: absolute;top: 0;right: 0;"
+      *ngIf="label != 0"
+      >{{ label }}</span
+    >
   </div>
 </div>

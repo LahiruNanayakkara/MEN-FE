@@ -1,0 +1,41 @@
+<div class="d-flex flex-column flex-md-row gap-4 justify-content-between">
+  <div class="d-flex gap-4">
+    <img
+      (click)="onNavigate()"
+      [src]="imgUrl"
+      [alt]="product!.name + item.color"
+      class="img-fluid object-fit-cover men-pointer"
+      width="120rem"
+    />
+    <div class="d-flex flex-column gap-2">
+      <span class="men-pointer" (click)="onNavigate()">{{ item.name }}</span>
+      <span class="fw-bold">${{ item.price }}</span>
+      <div class="d-flex gap-2">
+        <span *ngIf="item.color" class="">{{ item.color }}</span>
+        <span *ngIf="item.size" class="">{{ item.size }}</span>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="d-flex flex-column gap-2">
+    <button mat-icon-button (click)="openDialog()"><mat-icon>add_shopping_cart</mat-icon></button>
+  <button mat-icon-button (click)="openDialog()"><mat-icon>delete</mat-icon></button>
+  </div> -->
+  <div class="d-flex align-self-end gap-2">
+    <button
+      mat-flat-button
+      (click)="openRemoveDialog()"
+      class="men-btn men-btn-outline men-btn-sm"
+      style="width: 10rem"
+    >
+      Remove
+    </button>
+    <button
+      mat-flat-button
+      (click)="onMovetoCart()"
+      class="men-btn men-btn-sm"
+      style="width: 10rem"
+    >
+      Move to Cart
+    </button>
+  </div>
+</div>

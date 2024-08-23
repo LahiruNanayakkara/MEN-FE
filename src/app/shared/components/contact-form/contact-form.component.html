@@ -1,0 +1,86 @@
+<form [formGroup]="contactForm">
+  <ng-content select=".title"></ng-content>
+  <div class="d-flex flex-column gap-4 align-items-end">
+    <div class="d-flex align-items-start gap-3 align-self-stretch">
+      <div class="form-control men-form-control p-0">
+        <input
+          class="flex-fill rounded-0"
+          formControlName="firstName"
+          type="text"
+          placeholder="First Name"
+        />
+        <span
+        *ngIf="
+          contactForm.controls['firstName'].dirty &&
+          contactForm.hasError('required', 'firstName')
+        "
+        class="text-danger"
+        >This field is required!</span
+      >
+      </div>
+      <div class="form-control men-form-control p-0">
+        <input
+          class="flex-fill rounded-0"
+          formControlName="lastName"
+          type="text"
+          placeholder="Last Name"
+        />
+        <span
+        *ngIf="
+          contactForm.controls['lastName'].dirty &&
+          contactForm.hasError('required', 'lastName')
+        "
+        class="text-danger"
+        >This field is required!</span
+      >
+      </div>
+    </div>
+    <div class="form-control men-form-control p-0 flex-fill">
+      <input
+        class="flex-fill rounded-0"
+        formControlName="email"
+        type="email"
+        placeholder="Email"
+      />
+      <span
+        *ngIf="
+          contactForm.controls['email'].dirty &&
+          contactForm.hasError('required', 'email')
+        "
+        class="text-danger"
+        >This field is required!</span
+      >
+      <span
+      *ngIf="
+        contactForm.controls['email'].dirty &&
+        contactForm.hasError('pattern', 'email')
+      "
+      class="text-warning"
+      >Please enter a valid email address!</span
+    >
+    </div>
+    <div class="form-control men-form-control p-0 flex-fill">
+      <input
+        class="flex-fill rounded-0"
+        formControlName="phone"
+        type="text"
+        placeholder="Phone"
+      />
+      <span
+        *ngIf="
+          contactForm.controls['phone'].dirty &&
+          contactForm.hasError('required', 'phone')
+        "
+        class="text-danger"
+        >This field is required!</span
+      ><span
+      *ngIf="
+        contactForm.controls['phone'].dirty &&
+        contactForm.hasError('pattern', 'phone')
+      "
+      class="text-warning"
+      >Please enter a valid phone number!</span
+    >
+    </div>
+  </div>
+</form>

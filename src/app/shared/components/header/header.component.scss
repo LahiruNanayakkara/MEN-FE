@@ -31,13 +31,27 @@ app-searchbar {
 // }
 
 @media (max-width: 768px) {
+
+  .men-navbar {
+    padding-top: 10.5rem !important;
+  }
+
   .logo {
     width: 6rem;
   }
 }
 
-header {
+.men-header {
   position: fixed;
   z-index: 1000;
   width: 100vw;
+}
+
+.men-navbar {
+  padding-top: 6rem;
+}
+
+
+app-header-badge {
+  cursor: pointer;
 }

@@ -1,0 +1,26 @@
+<div class="men-bag justify-content-between gap-4 rounded-2 py-4">
+  <div class="d-flex flex-column gap-2">
+    <span class="fw-bold">To</span>
+    <div class="d-flex flex-column gap-1 small">
+      <span
+        >{{ shippingDetails.firstName }} {{ shippingDetails.lastName }}</span
+      >
+      <span>{{ shippingDetails.email }}</span>
+      <span>{{ shippingDetails.phone }}</span>
+    </div>
+    <div class="d-flex flex-column gap-1 small">
+      <span
+        >{{ shippingDetails.address.street }},
+        {{ shippingDetails.address.apartment }}</span
+      >
+      <span
+        >{{ shippingDetails.address.city }},
+        {{ shippingDetails.address.province }}</span
+      >
+      <span>{{ shippingDetails.address.postalCode }}</span>
+    </div>
+  </div>
+  <button mat-icon-button>
+    <mat-icon>edit</mat-icon>
+  </button>
+</div>
