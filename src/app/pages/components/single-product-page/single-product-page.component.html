@@ -71,14 +71,14 @@
               <p [class.warn]="!selectedColor && showWarnings">Colours</p>
               <div class="d-flex gap-2">
                 <button
-                  [title]="color"
-                  (click)="onImageSelect(color)"
+                  [title]="color.color"
+                  (click)="onImageSelect(color.color)"
                   class="men-color-btn"
-                  [ngClass]="{ 'color-selected': selectedColor == color }"
-                  [style]="getColor(color)"
-                  *ngFor="let color of product?.colors; trackBy: trackByColor"
+                  [ngClass]="{ 'color-selected': selectedColor!.toLocaleLowerCase() == color.color}"
+                  [style]="getColor(color.code)"
+                  *ngFor="let color of product?.images; trackBy: trackByColor"
                 >
-                  {{ color.charAt(0) }}
+                  {{ color.color.charAt(0) }}
                 </button>
               </div>
             </div>

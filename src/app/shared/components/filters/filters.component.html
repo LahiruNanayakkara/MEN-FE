@@ -1,27 +1,75 @@
 <div class="container men-filter-container p-4 rounded-2">
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h1 class="fw-bold m-0">Filters</h1>
-    <mat-icon>tune</mat-icon>
   </div>
-  <div>
+  <div class="d-flex flex-column gap-3">
     <div class="d-flex flex-column gap-2">
-      <h2 class="fw-bold m-0">Categories</h2>
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="fw-bold m-0">Categories</h2>
+        <div
+          class="d-flex align-items-center gap-1"
+          (click)="onCategorySelectedClear()"
+          *ngIf="categorySelected"
+        >
+          <mat-icon class="text-danger fs-5">close</mat-icon>
+          <span class="text-danger men-pointer">Clear</span>
+        </div>
+      </div>
       <div>
         <ng-container *ngFor="let item of categoriesWithCount">
           <div class="d-flex justify-content-between align-items-center py-1">
-            <span
-              ><label [for]="item.name.toLocaleLowerCase()" class="men-pointer"
-                >{{ item.name }} ({{item.count}})</label
-              ></span
-            >
+            <span>
+              <label [for]="item.name.toLocaleLowerCase()" class="men-pointer">
+                {{ item.name }} ({{ item.count }})
+              </label>
+            </span>
             <input
-              [formControlName]="item.name.toLocaleLowerCase()"
-              type="checkbox"
+              name="category"
+              type="radio"
               class="men-pointer men-checkbox"
               [id]="item.name.toLocaleLowerCase()"
+              [value]="item.name"
+              [(ngModel)]="categorySelected"
+              (change)="onCategorySelected(item.name)"
             />
           </div>
         </ng-container>
+      </div>
+    </div>
+    <div class="d-flex flex-column gap-2">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="fw-bold m-0">Price</h2>
+        <div
+          class="d-flex align-items-center gap-1"
+          (click)="onPriceRangeClear()"
+          *ngIf="checkPriceRangeSelected()"
+        >
+          <mat-icon class="text-danger fs-5">close</mat-icon>
+          <span class="text-danger men-pointer">Clear</span>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center gap-2">
+        <span>${{ minPriceSelected }}</span>
+        <mat-slider
+          style="width: 100% !important"
+          min="20"
+          max="500"
+          step="10"
+        >
+          <input
+            matSliderStartThumb
+            [value]="minPriceSelected"
+            [(ngModel)]="minPriceSelected"
+            (change)="onPriceRangeChange()"
+          />
+          <input
+            matSliderEndThumb
+            [value]="maxPriceSelected"
+            [(ngModel)]="maxPriceSelected"
+            (change)="onPriceRangeChange()"
+          />
+        </mat-slider>
+        <span>${{ maxPriceSelected }}</span>
       </div>
     </div>
   </div>

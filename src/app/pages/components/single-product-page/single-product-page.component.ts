@@ -1,6 +1,6 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '../../../models/product';
+import { itemImage, Product } from '../../../models/product';
 import { ProductService } from '../../../services/product.service';
 import { CartService } from '../../../services/cart.service';
 import { CartItem } from '../../../models/cartItem';
@@ -78,15 +78,15 @@ export class SingleProductPageComponent implements OnInit, DoCheck {
   }
 
   getColor(color: string) {
-    return `background:${color};color:${color};`;
+    return `background:${color} !important;color:${color} !important;`;
   }
 
   trackBySize(index: number, size: string): string {
     return size;
   }
 
-  trackByColor(index: number, color: string): string {
-    return color;
+  trackByColor(index: number, color: itemImage): string {
+    return color.code;
   }
 
   onSelectedQtyDecrease() {

@@ -44,10 +44,12 @@
                 Clear All
               </button>
             </div>
-            <ng-container *ngFor="let item of cartItems; let last = last">
-              <app-cart-item [item]="item"></app-cart-item>
-              <hr *ngIf="!last" />
-            </ng-container>
+            <div [@moveIn]="cartItems.length + cartItems.length">
+              <ng-container *ngFor="let item of cartItems; let last = last">
+                <app-cart-item [item]="item"></app-cart-item>
+                <hr *ngIf="!last" />
+              </ng-container>
+            </div>
           </div>
           <div class="col-12 col-lg-4 mt-5 mt-lg-0">
             <div class="d-flex flex-column gap-4">

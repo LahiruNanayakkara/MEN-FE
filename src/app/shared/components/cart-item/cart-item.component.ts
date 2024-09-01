@@ -86,7 +86,7 @@ export class CartItemComponent implements OnInit {
       return;
     }
     product.images.forEach((val) => {
-      if (val.color == this.item.color) {
+      if (val.color == this.item.color.toLowerCase()) {
         this.imgUrl = val.imageUrl;
       }
     })

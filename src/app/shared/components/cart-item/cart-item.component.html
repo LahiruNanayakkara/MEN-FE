@@ -4,8 +4,9 @@
       (click)="onNavigate()"
       [src]="imgUrl"
       [alt]="product!.name + item.color"
-      class="img-fluid object-fit-cover men-pointer"
+      class="img-fluid object-fit-cover men-pointer overflow-hidden"
       width="120rem"
+      height="100%"
     />
     <div class="d-flex flex-column gap-2">
       <span class="men-pointer" (click)="onNavigate()">{{ item.name }}</span>

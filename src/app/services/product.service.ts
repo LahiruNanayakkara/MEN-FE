@@ -37,49 +37,28 @@ export class ProductService {
       price: 55.0,
       category: 'Shrits & T-shirts',
       sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['Red', 'Blue', 'Green'],
+      colors: ['Sky Blue', 'White', 'Black'],
       brand: 'Nike',
       material: 'Cotton',
       stockQuantity: 100,
       images: [
         {
-          color: '',
+          color: 'sky blue',
+          code: '#87CEEB',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/25954af4-00df-4b23-875e-ee7599ebda49/acg-mens-dri-fit-t-shirt-MC8jtN.png',
         },
         {
-          color: '',
+          color: 'white',
+          code: '#fff',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f93dbf52-82fc-43c9-83dd-ad753347a2ce/acg-mens-dri-fit-t-shirt-MC8jtN.png',
         },
         {
-          color: '',
+          color: 'black',
+          code: '#000',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3e6abf6e-2a05-4b98-ad39-6afb1ce29fc6/acg-mens-dri-fit-t-shirt-MC8jtN.png',
-        },
-      ],
-    },
-    {
-      id: 4,
-      name: "Men's Formal Trousers",
-      description: 'Elegant and comfortable formal trousers for office wear.',
-      price: 39.99,
-      category: 'Pants',
-      sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['Black', 'Navy', 'Gray'],
-      brand: 'SuitMaster',
-      material: 'Polyester',
-      stockQuantity: 60,
-      images: [
-        {
-          color: '',
-          imageUrl:
-            'https://via.placeholder.com/300x400.png?text=Men%27s+Formal+Trousers+1',
-        },
-        {
-          color: '',
-          imageUrl:
-            'https://via.placeholder.com/300x400.png?text=Men%27s+Formal+Trousers+2',
         },
       ],
     },
@@ -91,49 +70,28 @@ export class ProductService {
       price: 39.99,
       category: 'Shrits & T-shirts',
       sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['White', 'Black', 'Blue'],
+      colors: ['Light Blue', 'Red', 'Black'],
       brand: 'HugoBoss',
       material: 'Cotton',
       stockQuantity: 75,
       images: [
         {
-          color: '',
+          color: 'light blue',
+          code: '#ADD8E6',
           imageUrl:
             'https://images.hugoboss.com/is/image/boss/hbeu50468362_450_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&bgcolor=ebebeb&lastModified=1720213219000&wid=1440&hei=2182&fmt=webp',
         },
         {
-          color: '',
+          color: 'red',
+          code: '#ff0000',
           imageUrl:
             'https://images.hugoboss.com/is/image/boss/hbeu50468362_617_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&bgcolor=ebebeb&lastModified=1720213219000&wid=1440&hei=2182&fmt=webp',
         },
         {
-          color: '',
+          color: 'black',
+          code: '#000',
           imageUrl:
             'https://images.hugoboss.com/is/image/boss/hbeu50468362_404_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&bgcolor=ebebeb&lastModified=1720213219000&wid=1440&hei=2182&fmt=webp',
-        },
-      ],
-    },
-    {
-      id: 3,
-      name: "Men's Casual Trousers",
-      description: 'Elegant and comfortable formal trousers for office wear.',
-      price: 39.99,
-      category: 'Pants',
-      sizes: ['30', '32', '34', '36'],
-      colors: ['Black', 'Navy', 'Gray'],
-      brand: 'SuitMaster',
-      material: 'Polyester',
-      stockQuantity: 60,
-      images: [
-        {
-          color: '',
-          imageUrl:
-            'https://via.placeholder.com/300x400.png?text=Men%27s+Formal+Trousers+1',
-        },
-        {
-          color: '',
-          imageUrl:
-            'https://via.placeholder.com/300x400.png?text=Men%27s+Formal+Trousers+2',
         },
       ],
     },
@@ -145,23 +103,26 @@ export class ProductService {
       price: 45.0,
       category: 'Shrits & T-shirts',
       sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['White', 'Black', 'Coconut Milk'],
+      colors: ['Black', 'Ash Gray', 'Coconut Milk'],
       brand: 'Nike',
       material: 'Cotton',
       stockQuantity: 75,
       images: [
         {
-          color: '',
+          color: 'black',
+          code: '#000',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e9ed6b46-441b-4131-ac73-e8d5f9370911/mens-max90-basketball-t-shirt-1Qt1D8.png',
         },
         {
-          color: '',
+          color: 'ash blue',
+          code: '#ADBDC9',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/531dcfdd-e5ff-4841-b0ea-45651f514531/mens-max90-basketball-t-shirt-1Qt1D8.png',
         },
         {
-          color: '',
+          color: 'coconut milk',
+          code: '#f0ede5',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/437bdc39-8cbc-4765-8b63-84ca53a5df1d/mens-max90-basketball-t-shirt-1Qt1D8.png',
         },
@@ -182,11 +143,13 @@ export class ProductService {
       images: [
         {
           color: 'dark-green',
+          code: '#013220',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/65bfe83f-d95a-4c37-ae6e-ecf489ac6abe/mens-dri-fit-fitness-t-shirt-0c6L9L.png',
         },
         {
           color: 'black',
+          code: '#000000',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b9e03504-f3b8-4c6f-a111-6dc5427b87ee/mens-dri-fit-fitness-t-shirt-0c6L9L.png',
         },
@@ -200,23 +163,20 @@ export class ProductService {
       price: 55.0,
       category: 'Shrits & T-shirts',
       sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['White', 'Black'],
+      colors: ['Green Blue', 'Black'],
       brand: 'Nike',
       material: '60-62% cotton/38-40% polyester',
       stockQuantity: 75,
       images: [
         {
-          color: '',
+          color: 'green blue',
+          code: '#B9BDAA',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f26bc201-7f6a-413a-8b72-dcb022d11df0/primary-mens-dri-fit-short-sleeve-versatile-top-XK77j1.png',
         },
         {
-          color: '',
-          imageUrl:
-            'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0a5b6e7d-763a-4286-a21b-b56cb67cd254/primary-mens-dri-fit-short-sleeve-versatile-top-XK77j1.png',
-        },
-        {
-          color: '',
+          color: 'black',
+          code: '#000',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3832a402-4c28-4a69-92c5-db6510eada5f/primary-mens-dri-fit-short-sleeve-versatile-top-XK77j1.png',
         },
@@ -230,23 +190,26 @@ export class ProductService {
       price: 99.99,
       category: 'Shrits & T-shirts',
       sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['White', 'Black'],
+      colors: ['Black', 'Beige', 'White'],
       brand: 'HugoBoss',
       material: '60-62% cotton/38-40% polyester',
       stockQuantity: 75,
       images: [
         {
-          color: '',
+          color: 'black',
+          code: '#000000',
           imageUrl:
             'https://images.hugoboss.com/is/image/boss/hbeu50504381_001_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&bgcolor=ebebeb&lastModified=1719989613000&wid=1440&hei=2182&fmt=webp',
         },
         {
-          color: '',
+          color: 'beige',
+          code: '#b08e6b',
           imageUrl:
             'https://images.hugoboss.com/is/image/boss/hbeu50504381_260_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&bgcolor=ebebeb&lastModified=1719989613000&wid=1440&hei=2182&fmt=webp',
         },
         {
-          color: '',
+          color: 'white',
+          code: '#ffffff',
           imageUrl:
             'https://images.hugoboss.com/is/image/boss/hbeu50504381_100_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&bgcolor=ebebeb&lastModified=1719989613000&wid=1440&hei=2182&fmt=webp',
         },
@@ -260,23 +223,26 @@ export class ProductService {
       price: 49.99,
       category: 'Shrits & T-shirts',
       sizes: ['S', 'M', 'L', 'XL'],
-      colors: ['White', 'Black'],
+      colors: ['White', 'Black', 'Coconut Milk'],
       brand: 'Nike',
       material: '100% cotton',
       stockQuantity: 75,
       images: [
         {
-          color: '',
+          color: 'coconut milk',
+          code: '#f0ede5',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0ac3e56b-4614-4bc0-899a-5b5da598128a/sportswear-premium-essentials-mens-long-sleeve-pocket-t-shirt-r0sMVl.png',
         },
         {
-          color: '',
+          color: 'white',
+          code: '#fff',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/91160cd5-0b22-4db8-8ba6-d1457a936807/sportswear-premium-essentials-mens-long-sleeve-pocket-t-shirt-r0sMVl.png',
         },
         {
-          color: '',
+          color: 'beige',
+          code: '#b08e6b',
           imageUrl:
             'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/da5d73a7-5eaf-4884-97f7-731e6cee6873/sportswear-premium-essentials-mens-long-sleeve-pocket-t-shirt-r0sMVl.png',
         },

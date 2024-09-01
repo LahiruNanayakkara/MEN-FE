@@ -5,11 +5,13 @@ import { ProductService } from '../../../services/product.service';
 import { CartItem } from '../../../models/cartItem';
 import { MatDialog } from '@angular/material/dialog';
 import { ClearCartComponent } from '../../../popups/clear-cart/clear-cart.component';
+import { moveIn } from '../../../animations';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.scss'
+  styleUrl: './cart.component.scss',
+  animations: [moveIn]
 })
 export class CartComponent implements OnInit {
   cartItems:CartItem[] = [];

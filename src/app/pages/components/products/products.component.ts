@@ -1,24 +1,33 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { fade, zoomOut } from '../../../animations';
+import { fade, moveIn, zoomOut } from '../../../animations';
 import { ProductService } from '../../../services/product.service';
-import { categoryWithCount, Product } from '../../../models/product';
+import {
+  categoryWithCount,
+  priceRange,
+  Product,
+} from '../../../models/product';
+import { ProductFilterByCategoryPipe } from '../../../pipes/product-filter-by-category.pipe';
 
 export interface Category {
-  name:string;
-  bgImage:string;
+  name: string;
+  bgImage: string;
 }
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
-  animations: [zoomOut, fade]
+  animations: [zoomOut, fade, moveIn],
 })
 export class ProductsComponent implements OnInit {
-  categories?:Category[];
+  products: Product[] = [];
+  categorySelected: string = '';
+  priceRangeSelected: priceRange = {
+    min: 20,
+    max: 500,
+  };
 
-  productByCat:Product[] = [];
-  constructor(private productService:ProductService) {}
+  constructor(private productService: ProductService) {}
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
@@ -35,9 +44,14 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.categories = this.productService.categories;
-    this.productByCat = this.productService.getProductByCategory("Shrits & T-shirts");
-    console.log(this.productByCat);
+    this.products = this.productService.getAllProducts();
   }
 
+  onAfterCategorySelected($event: string) {
+    this.categorySelected = $event;
+  }
+
+  onafterPriceRangeSelected($event: priceRange) {
+    this.priceRangeSelected = $event;
+  }
 }

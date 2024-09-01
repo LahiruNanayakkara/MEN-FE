@@ -14,6 +14,7 @@ export interface Product {
 
 export interface itemImage {
   color:string;
+  code:string;
   imageUrl: string;
 }
 
@@ -26,4 +27,9 @@ export class categoryWithCount {
     this.name = name;
     this.count = 0;
   }
+}
+
+export interface priceRange {
+  min:number;
+  max:number;
 }

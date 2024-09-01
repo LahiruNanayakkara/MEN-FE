@@ -10,7 +10,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatStepperModule} from '@angular/material/stepper';
-import { MatCheckboxModule } from '@angular/material/checkbox'
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [],
@@ -27,6 +28,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
     MatDialogModule,
     MatStepperModule,
     MatCheckboxModule,
+    MatSliderModule
   ],
   exports: [
     MatFormFieldModule,
@@ -40,6 +42,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
     MatDialogModule,
     MatStepperModule,
     MatCheckboxModule,
+    MatSliderModule
   ],
 })
 export class MaterialModule {}

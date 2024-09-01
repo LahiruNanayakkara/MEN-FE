@@ -16,6 +16,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { ProductFilterByCategoryPipe } from '../pipes/product-filter-by-category.pipe';
+import { ProductFilterByPricePipe } from '../pipes/product-filter-by-price.pipe';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,16 @@ import { PaymentComponent } from './components/payment/payment.component';
     WishlistComponent,
     CheckoutComponent,
     PaymentComponent,
+    ProductFilterByCategoryPipe,
+    ProductFilterByPricePipe
   ],
-  imports: [CommonModule, SharedModule, MaterialModule, RouterModule, FormsModule],
-  exports: [HomeComponent],
+  imports: [
+    CommonModule,
+    SharedModule,
+    MaterialModule,
+    RouterModule,
+    FormsModule,
+  ],
+  exports: [HomeComponent, ProductFilterByCategoryPipe, ProductFilterByPricePipe],
 })
 export class PagesModule {}

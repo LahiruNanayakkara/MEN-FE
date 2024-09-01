@@ -16,6 +16,9 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.getProducts().subscribe(products => {
       this.cartList = products;
+      if (this.cartList.length == 0) {
+        this.router.navigate(["/cart"]);
+      }
     })
   }
 
