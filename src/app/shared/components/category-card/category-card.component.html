@@ -1,9 +1,19 @@
 <div class="men-category-card">
-  <img src="../../../../assets/{{bgImage}}" alt class="men-category-card-image">
+  <img
+    src="../../../../assets/{{ bgImage }}"
+    alt
+    class="men-category-card-image"
+  />
   <div class="men-category-card-body">
-    <div class="d-flex align-items-center  flex-column gap-2">
-      <h3 class="men-category-card-title">{{title}}</h3>
-      <button mat-stroked-button class="men-btn men-btn-outline-light men-category-card-btn">Shop Now</button>
+    <div class="d-flex align-items-center flex-column gap-2">
+      <h3 class="men-category-card-title">{{ title }}</h3>
+      <button
+        [routerLink]="['/shop', title]"
+        mat-stroked-button
+        class="men-btn men-btn-outline-light men-category-card-btn"
+      >
+        Shop Now
+      </button>
     </div>
   </div>
 </div>

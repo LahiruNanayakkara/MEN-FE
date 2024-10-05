@@ -62,6 +62,7 @@
           <a
             *ngFor="let item of categories"
             class="men-categories men-menu-links text-white px-2"
+            [routerLink]="['/shop', item]"
             >{{ item }}</a
           >
           <div class="dropdown men-dropdown">
@@ -79,7 +80,7 @@
               <li>
                 <a
                   class="dropdown-item"
-                  href="#"
+                  [routerLink]="['/shop', item]"
                   *ngFor="let item of moreItems"
                 >
                   <span>{{ item }}</span>

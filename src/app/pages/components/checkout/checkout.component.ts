@@ -6,6 +6,7 @@ import { AddressFormComponent } from '../../../shared/components/address-form/ad
 import { ShippingtDetails } from '../../../models/contact';
 import { CheckoutService } from '../../../services/checkout.service';
 import { Router } from '@angular/router';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -27,7 +28,8 @@ export class CheckoutComponent implements OnInit, AfterViewInit {
 
   constructor(
     private checkoutService: CheckoutService,
-    private router: Router
+    private router: Router,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -47,6 +49,12 @@ export class CheckoutComponent implements OnInit, AfterViewInit {
         postalCode: this.shippingDetails.address.postalCode,
       };
     }
+
+    this.cartService.cart$.subscribe((cart) => {
+      if (cart.length === 0) {
+        this.router.navigate(['/cart']);
+      }
+    });
   }
 
   ngAfterViewInit(): void {
